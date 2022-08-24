@@ -17,7 +17,7 @@
     "changelog": "auto-changelog --starting-version 4.4.0 --commit-limit false --hide-credit",
     "eject": "react-scripts eject",
     "lint": "eslint \"src/**/*.js\"",
-    "start": "set PORT=9009 && react-scripts start",
+    "start": "set PORT=3000 && react-scripts start",
     "test": "react-scripts test",
     "test:cov": "npm test -- --coverage --watchAll=false",
     "test:debug": "react-scripts --inspect-brk test --runInBand"
@@ -41,7 +41,8 @@
     "react-router": "^6.3.0",
     "react-router-dom": "^6.3.0",
     "redux": "4.2.0",
-    "simplebar-react": "^2.4.1"
+    "simplebar-react": "^2.4.1",
+    "taffy": "^2.6.2"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.4",

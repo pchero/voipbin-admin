@@ -4,6 +4,10 @@
 # Test
 $ docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app -ti a26aa727331d /bin/bash
 
+# start
+$ npm install
+
+
 ## Getting started
 
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.

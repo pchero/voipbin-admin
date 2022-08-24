@@ -15,6 +15,7 @@ function userInfoReducer(state, action) {
 
 const UserInfoStateContext = createContext()
 const UserInfoDispatchContext = createContext()
+const UserInfoDBContext = createContext()
 
 export function UserInfoProvider({ children }) {
   const [userInfo, dispatch] = useReducer(userInfoReducer, {})

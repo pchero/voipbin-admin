@@ -10,7 +10,7 @@ const DefaultLayout = () => {
   const userInfoState = useUserInfoState();
   const token =userInfoState.token;
   console.log(`token : ${token}`);
-  
+
   if(!token){
     return(
       <Login />

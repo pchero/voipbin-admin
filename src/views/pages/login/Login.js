@@ -18,6 +18,7 @@ import { cilLockLocked, cilUser } from '@coreui/icons';
 import { ServiceContext, IncreaseCount } from '../../../service';
 import { useUserInfoState } from 'src/context/UserContext';
 import { useNavigate } from 'react-router-dom';
+// import * as TAFFY from 'taffy';
 
 async function loginUser(credentials) {
     const url = 'https://api.voipbin.net/auth/login';
@@ -44,22 +45,14 @@ function Login() {
     const handleSubmit = async () => {
         console.log('click login');
         userInfoState.token = "aaaaaaaaa";
-        //   --data-raw '{
-        //     "username": "admin",
-        //     "password": "admin"
-        // }'
         var response = await loginUser({
             username,
             password,
         });
-        // {
-        //     "username": "admin",
-        //     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lciI6IntcImlkXCI6XCI1ZTRhMDY4MC04MDRlLTExZWMtODQ3Ny0yZmVhNTk2OGQ4NWJcIixcInVzZXJuYW1lXCI6XCJhZG1pblwiLFwibmFtZVwiOlwiYWRtaW5cIixcImRldGFpbFwiOlwiYWRtaW4gYWNjb3VudFwiLFwid2ViaG9va19tZXRob2RcIjpcIlBPU1RcIixcIndlYmhvb2tfdXJpXCI6XCJodHRwczovL2VuN2V2YWp3aG1xYnQueC5waXBlZHJlYW0ubmV0XCIsXCJsaW5lX3NlY3JldFwiOlwiYmE1ZjA1NzVkODI2ZDViNGEwNTJhNDMxNDVlZjEzOTFcIixcImxpbmVfdG9rZW5cIjpcInRzZklpREIvMmNHSTVzSFJNSW9wN1MzU1M0S3NiRWxKL3VrUUtzNkxwSFkxWG9HMnBUTUhxZGl5TE51OGFNZGEycGkzdlRYc2NDS3A4WEdFdmZsNmRtSVQxbmZUVGRNa21ZODRpUkxJT0lBbDg1aUcvWFp1ZUkxV0JSdmNoZlY4VGxad0RtRUNiU1N6TCtXdXYrak8rZ2RCMDR0ODkvMU8vdzFjRG55aWxGVT1cIixcInBlcm1pc3Npb25faWRzXCI6W1wiMDM3OTZlMTQtN2NiNC0xMWVjLTlkYmEtZTcyMDIzZWZkMWM2XCJdLFwidG1fY3JlYXRlXCI6XCIyMDIyLTAyLTAxIDAwOjAwOjAwLjAwMDAwMFwiLFwidG1fdXBkYXRlXCI6XCIyMDIyLTA2LTE2IDA4OjM3OjE2Ljk1MjczOFwiLFwidG1fZGVsZXRlXCI6XCI5OTk5LTAxLTAxIDAwOjAwOjAwLjAwMDAwMFwifSIsImV4cCI6MTY2MTAzODE3NX0.fEJ6IcrSZBjNYBeO0SEfyw3h8fP3wmjc6oF2A4iNNFs"
-        // }
         if ('token' in response) {
             userInfoState.username = response['username'];
             userInfoState.token = response['token'];
-            navigate(`/home`);
+            navigate(`/dashboard`);
         }
     };
 
