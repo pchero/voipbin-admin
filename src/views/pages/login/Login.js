@@ -42,9 +42,9 @@ function Login() {
 
     let navigate = useNavigate();
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         console.log('click login');
-        userInfoState.token = "aaaaaaaaa";
         var response = await loginUser({
             username,
             password,
@@ -105,7 +105,8 @@ function Login() {
                                                 <CButton
                                                     color="primary"
                                                     className="px-4"
-                                                    onClick={() => handleSubmit()}
+                                                    type="submit"
+                                                    onClick={(e) => handleSubmit(e)}
                                                 >
                                                     Login
                                                 </CButton>
